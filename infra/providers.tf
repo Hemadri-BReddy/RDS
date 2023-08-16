@@ -27,7 +27,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-1"
   #profile = "AWSAdministratorAccess-194510975891"
   #access_key = var.aws_access_key
   #secret_key = var.aws_secret_key
