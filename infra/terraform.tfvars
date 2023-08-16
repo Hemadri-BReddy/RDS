@@ -1,6 +1,6 @@
 
   tags = {
-  Name        = "rds-vpc-10"
+  Name        = "rds-vpc"
   Environment = "DEV"
   terraform   = true
 }
@@ -20,7 +20,7 @@
   database_subnet_cidr = ["10.0.21.0/24", "10.0.22.0/24"]
   database_subnet_names = ["rds-db-1a", "rds-db-1b"]
   database_route_table_name = "rds-db-rt"
-  vpc-name = "rds-vpc-10"
+  vpc-name = "rds-vpc"
   aurora_cluster_description = "rds-aurora-database-creation"
   aurora_cluster_cidr = [
   {
@@ -32,7 +32,7 @@
   },
   ]
   public_subnet_cidr    = ["10.0.1.0/24", "10.0.2.0/24"]
-  public_subnet_names   = ["project-public-1a", "project-public-1b"]
+  public_subnet_names   = ["public-1a", "public-1b"]
   skip_snapshot = true
   #db_storage = 1
   db_deleetion_protection = false
