@@ -8,11 +8,11 @@
   aurora_engine = "aurora-mysql"
   aurora_engine_version = "5.7.mysql_aurora.2.11.3"
   database_name = "dbAurora"
-  database_username = "root"
+  database_username = "xanadu"
   database_retention_period = 7
   aurora_instance_identifier = "db-aurora-instance"
   db_instance_type = "db.r5.large"
-  secret_name = "aurora-secret-1"
+  secret_name = "aurora-secret-12"
   db_subnet_group = "rds-subnet-group"
   aurora_cluster_sg = "rds-sg"
   azs = ["ap-south-1a", "ap-south-1b"]
@@ -50,5 +50,5 @@
   https_endpoint = ""
   has_fallback_email = true
   cloudwatch-alarm = "Alarm1"
-  aws_access_key = "AKIAREAXEJE62VPL6W4T"
-  aws_secret_key = "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"
+  # aws_access_key = "AKIAREAXEJE62VPL6W4T"
+  # aws_secret_key = "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"

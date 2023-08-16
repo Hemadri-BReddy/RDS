@@ -41,7 +41,7 @@ resource "random_password" "password" {
 
 # store the password in secret manager
 resource "aws_secretsmanager_secret" "rds_aurora" {
-  name = var.secret_name
+  name = "${var.aurora_cluster_identifier}_secret"
   tags = merge(var.tags, {"Name" = var.secret_name})
 }
 
@@ -51,10 +51,33 @@ resource "aws_secretsmanager_secret" "rds_aurora" {
 
 # }
 
-resource "aws_secretsmanager_secret_version" "rds" {
+resource "aws_secretsmanager_secret_version" "rds_password" {
   secret_id     = aws_secretsmanager_secret.rds_aurora.id
-  secret_string = random_password.password.result     # tags is not required here cause it is just value 
+  secret_string = jsonencode(
+    {
+    
+    db_password = "${random_password.password.result}"
+    db_user = "${aws_rds_cluster.aurora_cluster.master_username}"
+    db_endpoint = "${aws_rds_cluster.aurora_cluster.endpoint}"
+  
+  }
+  )
+
+  
 }
+# resource "aws_secretsmanager_secret_version" "rds_username" {
+#   secret_id = aws_secretsmanager_secret.rds_aurora.id
+#   secret_string = aws_rds_cluster.aurora_cluster.master_username
+# }
+
+# resource "aws_secretsmanager_secret_version" "rds_endpoint" {
+#   secret_id = aws_secretsmanager_secret.rds_aurora.id
+#   secret_string = aws_rds_cluster.aurora_cluster.endpoint
+# }
+# resource "aws_secretsmanager_secret_version" "rds_" {
+#   secret_id = aws_secretsmanager_secret.rds_aurora.id
+#   secret_string = aws_rds_cluster.aurora_cluster.master_username
+# }
 
 resource "aws_kms_key" "main" {
   description = var.kmskey_description

@@ -68,12 +68,12 @@ variable "aurora_cluster_cidr" {
   type = list(map(string))
   default = [ ]
 }
-variable "aws_access_key" {
-  type = string
-}
-variable "aws_secret_key" {
-  type = string
-}
+# variable "aws_access_key" {
+#   type = string
+# }
+# variable "aws_secret_key" {
+#   type = string
+# }
 variable "skip_snapshot" {
   type = bool
 }
