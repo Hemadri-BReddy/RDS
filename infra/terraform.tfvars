@@ -15,7 +15,7 @@
   secret_name = "aurora-secret-11"
   db_subnet_group = "rds-subnet-group"
   aurora_cluster_sg = "rds-sg"
-  azs = ["us-west-1a", "us-west-1c"]
+  azs = ["ap-southeast-1a", "ap-southeast-1b"]
   vpc_cidr = "10.0.0.0/16"
   database_subnet_cidr = ["10.0.21.0/24", "10.0.22.0/24"]
   database_subnet_names = ["rds-db-1a", "rds-db-1b"]
@@ -50,5 +50,5 @@
   https_endpoint = ""
   has_fallback_email = true
   cloudwatch-alarm = "Alarm1"
-  # aws_access_key = "AKIAREAXEJE62VPL6W4T"
-  # aws_secret_key = "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"
+  aws_access_key = "AKIAREAXEJE62VPL6W4T"
+  aws_secret_key = "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"
