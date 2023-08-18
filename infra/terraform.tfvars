@@ -12,7 +12,7 @@
   database_retention_period = 7
   aurora_instance_identifier = "db-aurora-instance"
   db_instance_type = "db.r5.large"
-  secret_name = "aurora-secret-30"
+  secret_name = "aurora-secret-31"
   db_subnet_group = "rds-subnet-group"
   aurora_cluster_sg = "rds-sg"
   azs = ["ap-southeast-1a", "ap-southeast-1b"]
