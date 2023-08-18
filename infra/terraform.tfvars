@@ -15,7 +15,7 @@
   secret_name = "aurora-secret-39"
   db_subnet_group = "rds-subnet-group"
   aurora_cluster_sg = "rds-sg"
-  azs = ["ap-southeast-1a", "ap-southeast-1b"]
+  azs = ["ca-central-1a", "ca-central-1b"]
   vpc_cidr = "10.0.0.0/16"
   database_subnet_cidr = ["10.0.21.0/24", "10.0.22.0/24"]
   database_subnet_names = ["rds-db-1a", "rds-db-1b"]
